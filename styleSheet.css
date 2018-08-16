@@ -1,0 +1,450 @@
+<style>
+:root {
+--table_padding: 10px;
+--table_width: 1020px;
+--table_body_height: 500px;
+--column_large_width: 100px;
+--column_medium_width: 100px;
+--column_small_width: 50px;
+--column_tiny_width: 20px;
+}
+
+/*AREAS*/
+.hidden{
+display:none;
+}
+
+body{
+background-color: #f7f8fb/* #EBEFF5*/;
+color: #375f9b;
+}
+#mainBar{
+  position: fixed;
+  height:40px;
+  background-color:#375f9b;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  float:left;
+  z-index:2;
+}
+#globalContent{
+position: absolute;
+top:60px;
+left:10px;
+z-index:1;
+}
+.selectors{
+position: absolute;
+top:7px;
+left:5px;
+}
+.button-bar{
+position:absolute;
+top:0px;
+float:left;
+left:300px;
+}
+
+.welcomeMessage{
+width:1180px;
+text-align: center;
+
+}
+
+.welcome{
+font-size:20pt;
+}
+
+
+.msg-header{
+position: absolute;
+top: -10px;
+}
+ 
+.msg-body{
+position: absolute; 
+top: 30px;
+}
+ 
+.msg-footer{
+position:absolute;
+bottom: 10px;
+right: 10px;
+}
+
+#screenMessage{
+  position: absolute;
+  z-index:3; 
+  top: 0;
+  left: 0;  
+  height: 100%;
+  width:100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  text-align: center;
+}
+
+
+.messageBox{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #DCDCDC;
+  border-radius: 5px;
+  padding: 6px; 
+  width: 400px;
+  height: 200px;   
+  background-color: floralwhite;
+}
+
+#supplier-side{
+left:400px;
+top:0px;
+width:300px;
+position:absolute;
+}
+
+
+#customer-side{
+top:0px;
+left:0px;
+width:300px;
+position:absolute;
+}
+
+#changeCommercial{
+position:absolute;
+float:left;
+}
+
+/*TEXT*/
+div,p {
+   font-family:roboto;
+   font-size:10pt;
+   }
+   
+h1 {
+   font-family:roboto;
+   font-size:12pt;
+   }
+   
+h2 {
+   font-family:roboto;
+   font-size:12pt;
+   font-weight:normal;
+   background-color:#375F9B;
+   color:white;
+   text-align:center;
+   }      
+
+
+/*BUTTONS*/
+#minusButton, #plusButton{
+width:50px;
+}
+.buttons{
+top:0px;
+height:40px;
+float: left;
+background-color: #375f9b; 
+border: none;
+color: white;
+text-align: center;
+text-align:middle;
+text-decoration: none;
+/*display: inline-block;*/
+font-size: 16px;
+cursor: pointer;
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+}
+
+.buttons:hover{
+background-color:#1b2f4d;
+}
+
+.btn-nav{
+height:35px;
+width:233px;
+float: left;
+background-color: #f7f8fb; 
+border: none;
+color: #375f9b;
+text-align: center;
+text-decoration: none;
+font-size: 16px;
+cursor: pointer;
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+}
+.btn-nav:hover,.btn-work:hover,.changeRow:hover{
+color:white;
+background-color:#375f9b;
+}
+.btn-nav.active{
+color:white;
+background-color:#375f9b;
+}
+input:focus{
+outline:0;
+}
+
+.btn-work{
+width:220px;
+float: left;
+background-color: #f7f8fb; 
+border: none;
+color: #375f9b;
+text-align: center;
+text-decoration: none;
+font-size: 16px;
+cursor: pointer;
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+
+}
+.btn-acc.active{
+color:#375f9b;
+background-color:#f7f8fb;
+font-size: 12px;
+}
+.btn-acc{
+width: 60px;
+}
+
+
+/*INPUTS*/
+#disciplineList,#listOfSource,#listOfPhase{
+height: 30px;
+width: 215px;
+}
+select {
+  padding:3px;
+  border: 1px solid #DCDCDC;
+  border-radius: 5px;
+
+}
+
+.basicInfo, .descriptionItem {
+  border: 1px solid #375f9b;
+  border-radius: 5px;
+  padding: 6px; 
+  width: 200px;
+  height: 16px;    
+}
+
+ 
+ 
+/*TABLES*/ 
+
+table{
+border-collapse: collapse;
+/*background-color:#32CD32;*/
+}
+
+#listOfChanges{
+table-layout: fixed;
+}
+
+.changeRow{
+cursor: pointer;
+height:60px;
+}
+.changeRow, .actionLineItem, .validationLineItem{
+border-collapse: collapse;
+border-bottom: 1px solid #ccc;
+font-family:roboto;
+font-size:10pt;
+padding: 2px;
+}
+
+thead {
+font-weight: normal;
+text-align: left;
+ display: block;
+ width: 1300px;
+ border-bottom: 1px solid #acacac;
+}
+
+.table-body {
+    display: block;
+    overflow: auto;
+    width: 1300px;
+    height: 400px;
+  }
+  
+.table-head-small{
+width: 1100px;
+    
+
+}
+  
+.table-body-small{
+    display: block;
+    overflow: auto;
+    width: 1100px;
+    height: 290px;
+}
+
+th {
+height:40px;
+font-weight: normal;
+font-family:roboto;
+font-size:11pt;
+text-align: left;
+}
+
+
+.actionItem, .validationItem,.changeNumber{
+height: 30px;
+border: none;
+}
+
+textarea{
+resize:vertical;
+}
+#description{
+    height:150px;
+    width:580px;    
+    font-size:10pt;
+    padding: 6px;
+}  
+#submitButtons{
+position:fixed;
+top:60px;
+}
+.yesNo, .impactItem {
+border: none;
+border-color: transparent;
+}
+#left-part{
+float:left;
+position: absolute;
+left: 0px;
+top: 0px;
+
+width: 800px;
+
+height:auto;
+min-height:700px;
+height:auto !important;        /* for IE as it does not support min-height */
+height:700px;    
+
+
+}
+
+#top-part{
+float:left;
+position: absolute;
+height: 140px;
+width: 750px;
+}
+
+.left{
+width:699px;
+
+}
+.top{
+top: 0px;
+height: 140px;
+}
+.frame{
+float:left;
+position: absolute;
+border: 1px solid #375f9b;
+border-radius: 5px;
+padding: 6px; 
+
+}
+
+.middle{
+left:720px;
+width: 220px;
+
+}
+
+.right{
+left: 960px;
+text-align: center;
+width: 220px;
+
+}
+
+.band{
+float:left;
+background-color: #f7f8fb;
+position: absolute;
+left: 0px;
+top: 154px;
+height: 35px;
+width: 932px;
+text-align: center;
+}
+
+#status{
+   font-size:16pt;
+   font-weight:bold;
+   color: #375F9B; /*Air Liquide blue*/
+}
+
+.bottom{
+top: 188px;
+height:auto;
+min-height:320px;
+height:auto !important;        /* for IE as it does not support min-height */
+height:320px;    
+width:1180px;
+}
+
+
+.footer{
+ position: fixed;
+ float: right;
+ bottom:0px;
+ right: 0px;
+}
+
+
+
+/*PAGE LOADING ANIMATION*/
+#loading{
+  z-index:3;
+  position: fixed;
+  top: 0;
+  left: 0;  
+  height: 100%;
+  width:100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  text-align: center;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #3498db;
+  width: 60px;
+  height: 60px;
+
+  position: relative;
+  margin: 100px auto 20px auto;
+  
+  
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
