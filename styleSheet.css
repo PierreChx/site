@@ -18,6 +18,10 @@ display:none;
   height:100px;
   background-color: #c4cbe2;
 }
+
+.main-area{
+  left:100px;
+}
 body{
 background-color: #f7f8fb/* #EBEFF5*/;
 color: #375f9b;
