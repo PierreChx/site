@@ -13,7 +13,11 @@
 .hidden{
 display:none;
 }
-
+.side-bar{
+  width:100px;
+  height:100%;
+  background-color: #c4cbe2;
+}
 body{
 background-color: #f7f8fb/* #EBEFF5*/;
 color: #375f9b;
